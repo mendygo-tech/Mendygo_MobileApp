@@ -3,3 +3,13 @@
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["**/node_modules", "**/Pods"]
 }
+// 
+
+// {
+//   "compilerOptions": {
+//     "allowJs": true,
+//     "noEmit": true,
+//     "isolatedModules": true
+//   },
+//   "include": ["src", "App.tsx"]
+// }
