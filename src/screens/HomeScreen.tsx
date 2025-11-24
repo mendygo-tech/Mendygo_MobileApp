@@ -1,14 +1,15 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }: any) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to Mendygo </Text>
      
 
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Get Started</Text>
+      <TouchableOpacity
+                        style={styles.button} onPress={() => navigation.replace("DashboardScreen")}>
+                        <Text style={styles.buttonText}>Get Started</Text>
       </TouchableOpacity>
     </View>
   );
