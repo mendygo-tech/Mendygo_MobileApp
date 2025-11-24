@@ -64,7 +64,7 @@ const SignupScreen = ({navigation}:any) => {
         {/* Email */}
          <Text style={styles.label}>Email</Text>
         <View style={styles.inputContainer}>
-          {/* <Icon name="email" size={22} color="#66B733" style={{ marginRight: 8 }} /> */}
+          
           <MaterialIcons name="email" size={24} color="black"  />
           <TextInput
           
