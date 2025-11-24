@@ -2,7 +2,10 @@ import React from "react";
 import { View , Text,Image, StyleSheet, TouchableOpacity } from "react-native";
 
 
-const IntroScreen = ()=>{
+const IntroScreen = ({navigation}:any)=>{
+
+   
+
     return(
         <View style={styles.container}>
 
@@ -17,14 +20,16 @@ const IntroScreen = ()=>{
                   />
 
             <Text style={styles.title}>
-                Your <Text style={styles.greenText}>AI-Copilot</Text> For Operations
+                 For Operations
             </Text>
-             <Image source={require("../assets/images/Intro.png")} 
-                    style={styles.IntroImage} />
+             <Image
+                    source={require("../assets/images/Intro.png")} 
+                    style={styles.IntroImage}
+                  />
 
         <Image source={require("../assets/images/mendyLogo.png")} 
-                    style={styles.mendyLogo} />
-          
+                    style={styles.mendyLogo}
+                  />
                   <View style={styles.box1}>
                     <Text style={{padding:5, color:"#ffffffff", fontWeight:"500",fontSize:15}}>Hi, How i can assist you today ?</Text>
                     </View>
@@ -36,7 +41,7 @@ const IntroScreen = ()=>{
 
       <Text style={styles.subtitle}>“Mendy - your Smart Copilot for solving Operational problems.”</Text>
 
-            <TouchableOpacity  style={styles.exploreButton} onPress={()=>{} }>
+            <TouchableOpacity  style={styles.exploreButton} onPress={()=>{ navigation.replace("SignupScreen")} }>
                 <Text style={styles.exploreText}>Explore</Text>
             </TouchableOpacity>
 
@@ -64,32 +69,38 @@ const styles = StyleSheet.create({
     },
     mendyImage:{
         position:"absolute",
-        width: 185,
-        height: 70,
-        resizeMode: "contain",
-        top:110,
+         width: 185,
+    height: 70,
+    resizeMode: "contain",
+    top:110,
 
     },
     IntroImage:{
           position:"relative",
          width: 340,
-         height: 255,
-         resizeMode: "contain",
-         margin:0,
+    height: 255,
+    resizeMode: "contain",
+    margin:0,
+    
+
     },
     title:{
+        
     fontSize: 22,
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 3,
    
+    
     },
     greenText: {
-        color: "rgba(102, 183, 51, 1)", 
+        color: "rgba(102, 183, 51, 1)",
     },
     subtitle:{
         fontSize: 18,
+    
     textAlign: "center",
+    // marginBottom: 10,
     bottom:-40,
     fontWeight:"500",
 
@@ -101,45 +112,57 @@ const styles = StyleSheet.create({
         resizeMode:"contain",
         left:40,
         top:501,
+        shadowColor: "#66B733", 
+shadowOpacity: 1,
+shadowRadius: 10,
+elevation: 10,
 
     },
     box1:{
         height:35,
         width:240,
-        fontSize: 10,
-        alignItems:"center",
-        alignContent:"center",
-        backgroundColor: "rgba(102, 183, 51, 1)",
-       borderRadius: 9,
-       marginBottom:15,
-       left:-2,
-       marginTop:32,
-       elevation:5,
+    fontSize: 10,
+
+    alignItems:"center",
+    alignContent:"center",
+  
+    backgroundColor: "rgba(102, 183, 51, 1)",
+
+     borderRadius: 9,
+     marginBottom:15,
+     left:-2,
+     marginTop:32,
+     elevation:5,
     
     },
     box2:{
-        height:50,
+          height:50,
         width:280,
-        fontSize: 10,
-        alignContent:"center",
-        backgroundColor: "rgba(239, 241, 245, 1)",
-        elevation:3,
-         borderRadius: 9,
-         left:35,
+    fontSize: 10,
+    alignContent:"center",
+   backgroundColor: "rgba(239, 241, 245, 1)",
+   elevation:3,
+
+     borderRadius: 9,
+     left:35,
+     
+
     },
 
- exploreButton:{
+    exploreButton:{
+        // marginTop:10,
         bottom:-52,
         backgroundColor: "rgba(102, 183, 51, 1)",
          padding:0,
-        paddingHorizontal: 35,
-        borderRadius: 12,
-        elevation: 4,
-        margin:0,
-       alignItems: "center",
+  paddingHorizontal: 35,
+  borderRadius: 12,
+  elevation: 4,
+  margin:0,
+ 
+  alignItems: "center",
 
     },
- exploreText:{
+    exploreText:{
         color:"#ffffffff",
         fontSize:32,
         fontFamily:"Montserrat",
