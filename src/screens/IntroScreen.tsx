@@ -163,7 +163,7 @@ elevation: 10,
 
     },
     exploreText:{
-        color:"#ffffffff",
+        color:"#ffff",
         fontSize:32,
         fontFamily:"Montserrat",
 
