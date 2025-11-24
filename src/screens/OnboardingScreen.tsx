@@ -91,7 +91,7 @@ export default function OnboardingScreen({ navigation }: any) {
     }
   };
 
-  const handleSkip = () => navigation.replace("Home");
+  const handleSkip = () => navigation.replace("IntroScreen");
 
   return (
   <View style={[styles.container, { backgroundColor: slides[currentIndex].backgroundColor }]}>
