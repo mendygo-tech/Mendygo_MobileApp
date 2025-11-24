@@ -87,11 +87,11 @@ export default function OnboardingScreen({ navigation }: any) {
     if (currentIndex < slides.length - 1) {
       sliderRef.current?.scrollToIndex({ index: currentIndex + 1 });
     } else {
-      navigation.replace("Home");
+      navigation.replace("IntroScreen");
     }
   };
 
-  const handleSkip = () => navigation.replace("Home");
+  const handleSkip = () => navigation.replace("IntroScreen");
 
   return (
   <View style={[styles.container, { backgroundColor: slides[currentIndex].backgroundColor }]}>
