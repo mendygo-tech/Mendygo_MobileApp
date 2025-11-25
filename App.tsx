@@ -6,7 +6,9 @@ import SplashScreen from "./src/screens/SplashScreen";
 import OnboardingScreen from "./src/screens/OnboardingScreen";
 import IntroScreen from "./src/screens/IntroScreen";
 import HomeScreen from "./src/screens/HomeScreen";
-import IntroScreen from "./src/screens/IntroScreen";
+import DashboardScreen from "./src/dashboard/DashboardScreen";
+import DashboardMenu from "./src/dashboard/DashboardMenu";
+
 import SignupScreen from "./src/screens/SignupScreen";
 import LoginScreen from "./src/screens/LoginScreen";
 
@@ -26,6 +28,8 @@ export default function AppNavigator() {
         <Stack.Screen name="LoginScreen" component={LoginScreen} options={{headerShown:false}}/>
         <Stack.Screen name="IntroScreen" component={IntroScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="DashboardScreen" component={DashboardScreen} options={{ headerShown: false }}  />
+        <Stack.Screen name="DashboardMenu" component={DashboardMenu} options={{headerShown:false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
