@@ -77,7 +77,7 @@ export default function DashboardScreen({ navigation }: any) {
 
       {/* Bottom Navigation */}
       <View style={styles.bottomNav}>
-        <TouchableOpacity style={styles.navItem}>
+        <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate("SLDScreen")}>
           <Image source={require("../assets/images/navbaricons/slg.png")} style={styles.navIcon} />
           <Text style={styles.navLabel}>SLD</Text>
         </TouchableOpacity>
@@ -87,7 +87,7 @@ export default function DashboardScreen({ navigation }: any) {
           <Text style={styles.navLabel}>Trends</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.navItemActive}>
+        <TouchableOpacity style={styles.navItemActive} >
           <Image source={require("../assets/images/navbaricons/logo2.png")} style={styles.navIconActive} />
           <Text style={styles.navLabelActive}>Dashboard</Text>
         </TouchableOpacity>
