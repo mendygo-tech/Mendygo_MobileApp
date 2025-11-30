@@ -80,7 +80,7 @@ export default function DashboardScreen({ navigation }: any) {
         </TouchableOpacity>
 
         {/* AI Maintenance */}
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate("Maintenance")}>
           <Image
             source={require("../assets/images/aim.png")}
             style={styles.icon}

@@ -82,7 +82,7 @@ export default function DashboardScreen({ navigation }: any) {
           <Text style={styles.navLabel}>SLD</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.navItem}>
+        <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate("TrendsScreen")}>
           <Image source={require("../assets/images/navbaricons/trends.png")} style={styles.navIcon} />
           <Text style={styles.navLabel}>Trends</Text>
         </TouchableOpacity>
