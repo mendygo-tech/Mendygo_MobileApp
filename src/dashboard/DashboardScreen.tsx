@@ -77,22 +77,22 @@ export default function DashboardScreen({ navigation }: any) {
 
       {/* Bottom Navigation */}
       <View style={styles.bottomNav}>
-        <TouchableOpacity style={styles.navItem}>
+        <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate("SLDScreen")}>
           <Image source={require("../assets/images/navbaricons/slg.png")} style={styles.navIcon} />
           <Text style={styles.navLabel}>SLD</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.navItem}>
+        <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate("TrendsScreen")}>
           <Image source={require("../assets/images/navbaricons/trends.png")} style={styles.navIcon} />
           <Text style={styles.navLabel}>Trends</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.navItemActive}>
+        <TouchableOpacity style={styles.navItemActive} >
           <Image source={require("../assets/images/navbaricons/logo2.png")} style={styles.navIconActive} />
           <Text style={styles.navLabelActive}>Dashboard</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.navItem}>
+        <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate("AlertScreen")}>
           <Image source={require("../assets/images/navbaricons/alerts.png")} style={styles.navIcon} />
           <Text style={styles.navLabel}>Alerts</Text>
         </TouchableOpacity>
