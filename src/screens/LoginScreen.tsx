@@ -107,7 +107,7 @@ const LoginScreen = ({ navigation }: any) => {
 
         {/* Google Login */}
         <TouchableOpacity style={styles.googleBtn}>
-          {/* <MaterialIcons name="google" size={24} style={{ marginRight: 10 }} /> */}
+         
           <Text style={styles.googleText}>Sign in with Google Account</Text>
         </TouchableOpacity>
       </View>
