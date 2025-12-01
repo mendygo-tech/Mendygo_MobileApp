@@ -13,7 +13,7 @@ export default function DashboardScreen({ navigation }: any) {
     <View style={styles.container}>
       {/* Header */}
       <View style={styles.headerContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate("DashboardMenu")}>
+        <TouchableOpacity onPress={() => navigation.navigate("DashboardScreen")}>
           <Image
             style={{ height: 30, width: 30 }}
             source={require("../assets/images/slider.png")}
@@ -56,7 +56,7 @@ export default function DashboardScreen({ navigation }: any) {
         </TouchableOpacity>
 
         {/* SmartOEE */}
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate("SmartOEEScreen")}>
           <Image
             source={require("../assets/images/oee.png")}
             style={styles.icon}
@@ -68,7 +68,7 @@ export default function DashboardScreen({ navigation }: any) {
         </TouchableOpacity>
 
         {/* RTM */}
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate("RTM")}>
           <Image
             source={require("../assets/images/rtm.png")}
             style={styles.icon}
@@ -92,13 +92,25 @@ export default function DashboardScreen({ navigation }: any) {
         </TouchableOpacity>
 
         {/* Customized Industry 4.0 */}
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={()=>navigation.navigate("IndustryScreen")}>
           <Image
             source={require("../assets/images/cui.png")}
             style={styles.icon}
           />
           <View>
             <Text style={styles.title}>Customized Industry 4.0</Text>
+            <Text style={styles.subtitle}>
+              Contact us with your requirements
+            </Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.card} onPress={()=>navigation.navigate("SupportScreen")}>
+          <Image
+            source={require("../assets/images/cui.png")}
+            style={styles.icon}
+          />
+          <View>
+            <Text style={styles.title}>Help&Support</Text>
             <Text style={styles.subtitle}>
               Contact us with your requirements
             </Text>

@@ -87,7 +87,7 @@ export default function DashboardScreen({ navigation }: any) {
           <Text style={styles.navLabel}>Trends</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.navItemActive} >
+        <TouchableOpacity style={styles.navItemActive} onPress={() => navigation.navigate("DashboardMenu")}>
           <Image source={require("../assets/images/navbaricons/logo2.png")} style={styles.navIconActive} />
           <Text style={styles.navLabelActive}>Dashboard</Text>
         </TouchableOpacity>

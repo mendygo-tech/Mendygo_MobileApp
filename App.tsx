@@ -17,6 +17,17 @@ import AlertsScreen from "./src/navigation/AlertScreen";
 import SLDScreen from "./src/navigation/SLDScreen";
 import TrendsScreen from "./src/navigation/TrendsScreen";
 import Maintenance from "./src/AIM/Maintenance";
+import SupportScreen from "./src/Help/SupportScreen";
+import IndustryScreen from "./src/CIR/IndustryScreen";
+import SmartOEEScreen from "./src/OEE/SmartOEEScreen";
+import OEEScreen from "./src/OEE/OEEScreen";
+import Availability from "./src/OEE/Availability";
+import PerformanceScreen from "./src/OEE/PerformanceScreen";
+import ReliabilityScreen from "./src/OEE/ReliabilityScreen";
+import ProductionEfficiencyScreen from "./src/OEE/ProductionEfficiencyScreen";
+import BusinessOperatorImpactScreen from "./src/OEE/BusinessOperatorImpactScreen";
+import RTMChemicalsScreen from "./src/RTM/RTMChemicalsScreen";
+
 
 
 const Stack = createNativeStackNavigator();
@@ -42,6 +53,16 @@ export default function AppNavigator() {
         <Stack.Screen name="SLDScreen" component={SLDScreen} options={{headerShown:false}} />
         <Stack.Screen name="TrendsScreen" component={TrendsScreen} options={{headerShown:false}} />
         <Stack.Screen name="Maintenance" component={Maintenance} options={{headerShown:false}} />
+        <Stack.Screen name="SupportScreen" component={SupportScreen} options={{headerShown:false}} />
+        <Stack.Screen name="IndustryScreen" component={IndustryScreen} options={{headerShown:false}} />
+        <Stack.Screen name="SmartOEEScreen" component={SmartOEEScreen} options={{headerShown:false}} />
+        <Stack.Screen name="OEEScreen" component={OEEScreen} options={{headerShown:false}} />
+        <Stack.Screen name="Availability" component={Availability} options={{headerShown:false}} />
+        <Stack.Screen name="PerformanceScreen" component={PerformanceScreen} options={{headerShown:false}} />
+        <Stack.Screen name="ReliabilityScreen" component={ReliabilityScreen} options={{headerShown:false}} />
+        <Stack.Screen name="ProductionEfficiencyScreen" component={ProductionEfficiencyScreen} options={{headerShown:false }} />
+        <Stack.Screen name="BOIScreen" component={BusinessOperatorImpactScreen} options={{headerShown:false}} />
+        <Stack.Screen name="RTM" component={RTMChemicalsScreen} options={{headerShown:false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
