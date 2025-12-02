@@ -27,6 +27,12 @@ import ReliabilityScreen from "./src/OEE/ReliabilityScreen";
 import ProductionEfficiencyScreen from "./src/OEE/ProductionEfficiencyScreen";
 import BusinessOperatorImpactScreen from "./src/OEE/BusinessOperatorImpactScreen";
 import RTMChemicalsScreen from "./src/RTM/RTMChemicalsScreen";
+import RTMChemicalsScreen2 from "./src/RTM/RTMChemicalsScreen2";
+import FoodBeveragesScreen from "./src/RTM/FoodBeveragesScreen";
+import PulpFibreScreen from "./src/RTM/PulpFibreScreen";
+import BuildingsFactoriesScreen from "./src/RTM/BuildingsFactoriesScreen";
+import PharmaceuticalsScreen from "./src/RTM/PharmaceuticalsScreen";
+import RetailsMallsScreen from "./src/RTM/RetailsMallsScreen";
 
 
 
@@ -63,6 +69,12 @@ export default function AppNavigator() {
         <Stack.Screen name="ProductionEfficiencyScreen" component={ProductionEfficiencyScreen} options={{headerShown:false }} />
         <Stack.Screen name="BOIScreen" component={BusinessOperatorImpactScreen} options={{headerShown:false}} />
         <Stack.Screen name="RTM" component={RTMChemicalsScreen} options={{headerShown:false}} />
+        <Stack.Screen name="RTM2" component={RTMChemicalsScreen2} options={{headerShown:false}} />
+        <Stack.Screen name="Food" component={FoodBeveragesScreen} options={{headerShown:false}} />
+        <Stack.Screen name="Pulp" component={PulpFibreScreen} options={{headerShown:false}} />
+        <Stack.Screen name="Build" component={BuildingsFactoriesScreen} options={{headerShown:false}} />
+        <Stack.Screen name="Pharm" component={PharmaceuticalsScreen} options={{headerShown:false}} />
+        <Stack.Screen name="Retail" component={RetailsMallsScreen} options={{headerShown:false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );

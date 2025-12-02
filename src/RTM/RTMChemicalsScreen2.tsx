@@ -14,10 +14,11 @@ import { LineChart } from "react-native-chart-kit";
 
 const screenWidth = Dimensions.get("window").width;
 
-const RTMChemicalsScreen = ({ navigation }: any) => {
+const RTMChemicalsScreen2 = ({ navigation }: any) => {
+
   return (
     <View style={styles.container}>
-      
+
       {/* HEADER */}
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -50,28 +51,17 @@ const RTMChemicalsScreen = ({ navigation }: any) => {
         </TouchableOpacity>
       </View>
 
-      {/* CLEAN FILTER CHIP BAR */}
-      <View style={styles.filterContainer}>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          <View style={styles.filterScrollRow}>
-            <TouchableOpacity style={styles.filterChip} onPress={()=>navigation.navigate("RTM2")}><Text style={styles.filterChipText}>Chemicals 2</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.filterChip} onPress={()=>navigation.navigate("Food")}><Text style={styles.filterChipText}>Food & Beverages</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.filterChip} onPress={()=>navigation.navigate("Pulp")}><Text style={styles.filterChipText}>Pulp & Fibre Industry</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.filterChip} onPress={()=>navigation.navigate("Build")}><Text style={styles.filterChipText}>Building & Factories</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.filterChip} onPress={()=>navigation.navigate("Pharm")}><Text style={styles.filterChipText}>Pharmaceuticals</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.filterChip} onPress={()=>navigation.navigate("Retail")}><Text style={styles.filterChipText}>Retails & Malls</Text></TouchableOpacity>
-          </View>
-        </ScrollView>
-      </View>
+      <Text style={styles.sectionTitle}>Chemicals</Text>
 
-      {/* MAIN CONTENT */}
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 140 }}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 140 }}
+      >
 
-        <Text style={styles.sectionTitle}>Chemicals</Text>
 
-        {/* LINE CHART */}
+        {/* LINE CHART CARD */}
         <View style={styles.card}>
-          <Text style={styles.cardTitle}>Reaction Pressure</Text>
+          <Text style={styles.cardTitle}>Reaction temperature</Text>
 
           <LineChart
             data={{
@@ -96,29 +86,26 @@ const RTMChemicalsScreen = ({ navigation }: any) => {
           <Text style={styles.smallText}>Time</Text>
         </View>
 
-        {/* KPI CARDS */}
-        <View style={styles.row}>
-          <View style={styles.kpiCard}>
-            <Text style={styles.kpiTitle}>Process Yield</Text>
-            <Text style={styles.kpiValueGreen}>80%</Text>
-          </View>
-
-          <View style={styles.kpiCard}>
-            <Text style={styles.kpiTitle}>Waste treatment Efficiency</Text>
-            <Text style={styles.kpiValueGreen}>85%</Text>
-          </View>
+ <View style={styles.card}>
+          <Text style={styles.cardTitle}>Temperature & Humidity Index (°C)</Text>
+          <Image
+            source={require("../assets/images/rtm/gauge.png")}   // Replace with actual gauge component
+            style={{ width: "100%", height: 130, resizeMode: "contain", marginTop: 10 }}
+          />
         </View>
 
+
+
+        {/* KPI ROW */}
         <View style={styles.row}>
-          <View style={styles.kpiCardAlert}>
-            <Text style={styles.kpiTitle}>Safety Alerts</Text>
-            <Text style={styles.alertValue}>3</Text>
-            <Text style={styles.alertText}>Fire Alarm</Text>
+          <View style={styles.kpiCard}>
+            <Text style={styles.kpiTitle}>Chemical Composition Accuracy</Text>
+            <Text style={styles.kpiValueGreen}>98%</Text>
           </View>
 
           <View style={styles.kpiCard}>
-            <Text style={styles.kpiTitle}>Waste treatment Efficiency</Text>
-            <Text style={styles.kpiValueGreen}>85%</Text>
+            <Text style={styles.kpiTitle}>pH Level Monitoring</Text>
+            <Text style={styles.kpiValueGreen}>6.8</Text>
           </View>
         </View>
 
@@ -159,15 +146,15 @@ const RTMChemicalsScreen = ({ navigation }: any) => {
           <Text style={styles.navLabel}>Profile</Text>
         </TouchableOpacity>
       </View>
+
     </View>
   );
 };
 
-export default RTMChemicalsScreen;
+export default RTMChemicalsScreen2;
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#FFF", paddingHorizontal: 15 },
-
   header: { flexDirection: "row", justifyContent: "space-between", paddingVertical: 15 },
   headerTitle: { fontSize: 18, fontWeight: "700" },
   headerSub: { fontSize: 12, color: "#777" },
@@ -188,79 +175,44 @@ const styles = StyleSheet.create({
   bellIcon: { marginLeft: 10, position: "relative" },
   redDot: { width: 8, height: 8, backgroundColor: "red", borderRadius: 4, position: "absolute", right: 0, top: 0 },
 
-  /* CLEAN FILTER CONTAINER */
-  filterContainer: {
-    marginTop: 12,
-    paddingVertical: 8,
-    backgroundColor: "#fff",
-    borderRadius: 12,
-    elevation: 4,
-  },
-  filterScrollRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 10,
-    paddingHorizontal: 8,
-  },
-  filterChip: {
-    paddingVertical: 6,
-    paddingHorizontal: 14,
-    backgroundColor: "#E8F5E9",
-    borderRadius: 18,
-    borderWidth: 1,
-    borderColor: "#4CAF50",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  filterChipText: {
-    fontSize: 12.5,
-    fontWeight: "600",
-    color: "#4CAF50",
-  },
-
-  /* CONTENT */
-  sectionTitle: { fontSize: 16, fontWeight: "700", textAlign: "center", marginVertical: 15 },
+  sectionTitle: { fontSize: 18, fontWeight: "700", textAlign: "center", marginVertical: 15 },
 
   card: {
     backgroundColor: "#fff",
-    padding: 18,
-    borderRadius: 12,
+    padding: 16,
+    borderRadius: 16,
+    elevation: 6,
     marginBottom: 18,
-    elevation: 5,
   },
 
-  cardTitle: { fontSize: 15, fontWeight: "600", textAlign: "center" },
+  cardTitle: { fontSize: 15, fontWeight: "700", marginBottom: 10, textAlign: "center" },
   smallText: { textAlign: "center", color: "#666", marginTop: 5 },
 
-  row: { flexDirection: "row", justifyContent: "space-between",gap:10 },
-
+  row: { flexDirection: "row", justifyContent: "space-between" },
   kpiCard: {
     width: "48%",
+    height: 100,
     padding: 16,
     backgroundColor: "#fff",
     borderRadius: 12,
-    elevation: 3,
-    top:10
+    elevation: 4,
+    justifyContent: "center",
   },
+  kpiTitle: { fontSize: 14, color: "#000", marginBottom: 6 },
+  kpiValueGreen: { fontSize: 24, fontWeight: "700", color: "#4CAF50" },
+
   kpiCardAlert: {
     width: "48%",
     padding: 16,
-    backgroundColor: "#fff",
     borderRadius: 12,
-    elevation: 3,
+    elevation: 4,
+    backgroundColor: "#fff",
     borderColor: "#E53935",
     borderWidth: 2,
   },
 
-  kpiTitle: { fontSize: 13, color: "#000", marginBottom: 8 },
-  kpiValueGreen: { fontSize: 22, fontWeight: "700", color: "#4CAF50" },
-
-  alertValue: { fontSize: 26, fontWeight: "700", color: "#E53935", },
-  alertText: { color: "#E53935", fontWeight: "600", marginTop: 4 },
-
   floatingIcon: { position: "absolute", bottom: 90, right: 25, zIndex: 999 },
 
-  /* BOTTOM NAVIGATION */
   bottomNav: {
     position: "absolute",
     bottom: 0,
@@ -278,7 +230,6 @@ const styles = StyleSheet.create({
 
   navIcon: { width: 26, height: 26, resizeMode: "contain" },
   navIconActive: { width: 32, height: 32, resizeMode: "contain" },
-
   navLabel: { fontSize: 12, color: "#555", marginTop: 4 },
   navLabelActive: { fontSize: 12, color: "#4CAF50", marginTop: 4, fontWeight: "700" },
 });
